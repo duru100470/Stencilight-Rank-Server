@@ -67,6 +67,7 @@ router.delete('/:id', async (req, res, next) => {
     try {
         const db = await dbDriver.getDatabase();
         await userController.deleteUser(db, req.params.id);
+        res.send(req.params.id);
     }
     catch (err) {
         next(err);

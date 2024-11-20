@@ -34,7 +34,7 @@ const userController = {
     },
 
     async deleteUser(db: Database, uid: string): Promise<void> {
-        await db.run("DELETE FROM users WHERE id = ?", uid);
+        await db.run("DELETE FROM users WHERE uid = ?", uid);
     },
 
     async updateUser(db: Database, user: User, uid: string): Promise<void> {
